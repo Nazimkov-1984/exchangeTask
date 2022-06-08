@@ -1,0 +1,16 @@
+.footer {
+    background-color: moccasin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 20px;
+    flex: 0 0 auto;
+
+}
+.footerLink {
+    color: black;
+    text-decoration: none;
+}
+.footerLink:visited {
+    color: black;
+}

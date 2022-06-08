@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ rates }) => {
   }, [rates]);
 
   return (
-    <header className="header">
+    <header data-testid="header" className="header">
       <div className="headerTitleContainer">
         <Logo className={"headerLogo"} />
         <h2 className="headerTitle">{TITLE}</h2>
@@ -38,6 +38,7 @@ const Header: React.FC<HeaderProps> = ({ rates }) => {
             <li className="headerValueItem" key={item}>
               <span>{item}</span>
               <Flag
+                data-testid="flag"
                 style={{ width: 30, height: 50, marginRight: 6 }}
                 code={FLAGS[flagKey]}
               />

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Calculator from "./components/calculator/Calculator";
+import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
+import Instruction from "./components/instruction/Instruction";
 import {
   API_KEY,
   BASE_CURRENCY,
@@ -31,7 +33,7 @@ export interface ApiData {
 }
 
 const App = () => {
-  const [apiData] = useState<ApiData>({
+  const [apiData, setApidata] = useState<ApiData>({
     succes: true,
     timeStamp: 654656565,
     historical: true,
@@ -43,29 +45,31 @@ const App = () => {
     },
   });
 
-  useEffect(() => {
-    // const date = new Date();
-    // const ISOdate = date.toISOString().split("T")[0];
-    // fetch(`${BASE_URL}${ISOdate}?symbols=${SYMBOLS}&base=${BASE_CURRENCY}`, {
-    //   method: "GET",
-    //   redirect: "follow",
-    //   headers: {
-    //     apikey: API_KEY,
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((result) => setApidata(result))
-    //   .catch((error) => console.log("error", error));
-  }, []);
+  // useEffect(() => {
+  //   const date = new Date();
+  //   const ISOdate = date.toISOString().split("T")[0];
+  //   fetch(`${BASE_URL}${ISOdate}?symbols=${SYMBOLS}&base=${BASE_CURRENCY}`, {
+  //     method: "GET",
+  //     redirect: "follow",
+  //     headers: {
+  //       apikey: API_KEY,
+  //     },
+  //   })
+  //     .then((response) => response.json())
+  //     .then((result) => setApidata(result))
+  //     .catch((error) => console.log("error", error));
+  // }, []);
 
   return (
     <div className="App">
       <Header rates={apiData?.rates} />
       <main className="appContainer">
         <Calculator rates={apiData?.rates} />
+        <Instruction />
       </main>
+      <Footer />
     </div>
   );
-};
+};;
 
 export default App;

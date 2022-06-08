@@ -1,36 +1,37 @@
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    background-color: moccasin;
-margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: moccasin;
+  margin-bottom: 20px;
+  flex: 0 0 auto;
 }
-.headerValueItem{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.headerValueItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.headerValueItem span{
-    margin-right: 4px;
+.headerValueItem span {
+  margin-right: 4px;
 }
 
-.headerListValues{
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-    padding: 0 20px;
+.headerListValues {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0 20px;
 }
-.headerTitle{
-font-size: 2rem;
+.headerTitle {
+  font-size: 2rem;
 }
-.headerTitleContainer{
-    display: flex;
-    align-items: center;
+.headerTitleContainer {
+  display: flex;
+  align-items: center;
 }
-.headerLogo{
-    width: 80px;
-    height: 80px;
-    margin-right: 10px;
-    padding-left: 20px;
+.headerLogo {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  padding-left: 20px;
 }

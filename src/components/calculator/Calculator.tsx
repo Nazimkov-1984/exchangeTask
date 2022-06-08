@@ -139,7 +139,7 @@ const Calculator: React.FC<CalculatorProps> = ({ rates }) => {
   );
 
   return (
-    <div className="calculatorWrapper">
+    <div data-testid="calculator" className="calculatorWrapper">
       <div className="calculatorItemWrapper">
         <input
           id="conditionInput"
