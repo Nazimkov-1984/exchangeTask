@@ -4,18 +4,36 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
-  padding-top: 25%;
+  align-items: center;
 }
 
 .modalBody {
-  width: 400px;
+  width: 500px;
   border-radius: 5px;
   background-color: #fff;
-  height: 300px;
+  height: 400px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 20px;
+}
+.listTips {
+  margin-bottom: 40px;
+}
+.buttonModal {
+  padding: 6px 8px;
+  background-color: navajowhite;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.7s ease;
+}
+.buttonModal:hover {
+  cursor: pointer;
+  background-color: burlywood;
+}
+.modalTitle {
+  text-align: center;
 }

@@ -6,7 +6,7 @@ import Header from "./components/header/Header";
 import Instruction from "./components/instruction/Instruction";
 import {} from "./constants/constants";
 import { useDispatch } from "react-redux";
-import { toggle } from "./redux/store";
+import { toggleModal } from "./redux/store";
 
 export enum CURRENCY {
   UAH = "Гривна",
@@ -60,7 +60,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   const openModal = useCallback(() => {
-    dispatch(toggle());
+    dispatch(toggleModal());
   }, [dispatch]);
 
   return (
@@ -69,7 +69,7 @@ const App = () => {
       <main className="appContainer">
         <Calculator rates={apiData?.rates} />
         <Instruction />
-        <button onClick={openModal}>Open modal</button>
+        <button className="buttonAbout" onClick={openModal}>Узнать больше о калькуляторе валют</button>
       </main>
       <Footer />
     </div>
