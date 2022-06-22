@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import "./App.css";
 import Calculator from "./components/calculator/Calculator";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Instruction from "./components/instruction/Instruction";
-import {
-  API_KEY,
-  BASE_CURRENCY,
-  BASE_URL,
-  SYMBOLS,
-} from "./constants/constants";
+import {} from "./constants/constants";
+import { useDispatch } from "react-redux";
+import { toggle } from "./redux/store";
 
 export enum CURRENCY {
   UAH = "Гривна",
@@ -33,7 +30,7 @@ export interface ApiData {
 }
 
 const App = () => {
-  const [apiData, setApidata] = useState<ApiData>({
+  const [apiData] = useState<ApiData>({
     succes: true,
     timeStamp: 654656565,
     historical: true,
@@ -60,16 +57,23 @@ const App = () => {
   //     .catch((error) => console.log("error", error));
   // }, []);
 
+  const dispatch = useDispatch();
+
+  const openModal = useCallback(() => {
+    dispatch(toggle());
+  }, [dispatch]);
+
   return (
     <div className="App">
       <Header rates={apiData?.rates} />
       <main className="appContainer">
         <Calculator rates={apiData?.rates} />
         <Instruction />
+        <button onClick={openModal}>Open modal</button>
       </main>
       <Footer />
     </div>
   );
-};;
+};
 
 export default App;
